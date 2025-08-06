@@ -1,103 +1,93 @@
-# Fibonacci Sequence Implementations in Java
+# Fibonacci Analysis: Recursive, Iterative, and Memoized Implementations
 
-This project demonstrates three different implementations of the Fibonacci sequence in Java:
+This Java project showcases and compares three different approaches to computing the Fibonacci sequence:
 
-- 🌀 **Recursive**
-- ⚡ **Iterative**
-- 🧠 **Memoized Recursive**
+1. **Recursive** – classic definition-based method
+2. **Iterative** – loop-based optimization
+3. **Memoized Recursive** – recursive method with caching to enhance performance
 
-Each implementation is tested for correctness and performance using a flexible testing framework that prints results both horizontally and vertically.
+## 📁 Project Structure
 
----
+csc143/
+├── Fib.java // Interface defining the fib(n) method signature
+└── FibonacciTest.java // Implements three Fibonacci algorithms and runs comparisons
 
-## 📁 Files
-
-### `Fib.java`
-An interface defining a single method:
-```java
-long fib(int n);
-Used for functional-style testing across implementations.
-
-FibonacciTest.java
-The main class that includes:
-
-Three Fibonacci implementations:
-
-fib(n) - Recursive
-
-ifib(n) - Iterative
-
-mfib(n) - Memoized Recursive
-
-Test runners for:
-
-Small n tests with side-by-side comparisons
-
-Large n performance comparisons
-
-Flexible output format (horizontal and vertical)
-
-🚀 How to Run
-Compile all Java files:
-
-bash
+markdown
 Copy
 Edit
-javac csc143/*.java
-Run the main test program:
+
+## 📌 Description
+
+The goal of this program is to:
+
+- Analyze and compare the **performance** of various Fibonacci algorithms
+- Demonstrate **modular design** using an interface (`Fib`)
+- Practice **functional-style programming** via method references
+- Understand the importance of **memoization** and **iteration** in solving recursive problems efficiently
+
+### Implemented Methods
+
+| Method      | Type      | Description |
+|-------------|-----------|-------------|
+| `fib(int n)` | Recursive | Basic recursive Fibonacci implementation (inefficient for large `n`) |
+| `ifib(int n)` | Iterative | Uses a loop to efficiently compute Fibonacci numbers |
+| `mfib(int n)` | Memoized | Optimized recursive version using an array for memoization |
+
+## 🧪 Functionality Overview
+
+### Horizontal Tests
+
+- `checkRecursiveFib(int n)`
+- `checkMemoizedFib(int n)`
+- `checkIterativeFib(int n)`
+
+Prints the Fibonacci values from `0` to `n` side-by-side.
+
+### Vertical Tests (For Large `n`)
+
+- `checkLargeNRecursion(int n)`
+- `checkLargeNMemoization(int n)`
+- `checkLargeNIteration(int n)`
+
+Prints each `n` and its Fibonacci value line-by-line for easier analysis.
+
+> ⚠️ The recursive version (`fib(n)`) becomes slow and inefficient beyond `n ≈ 45`.
+
+## ▶️ How to Run
+
+1. Make sure you have Java installed (JDK 8+).
+2. Compile the program:
+
+```bash
+javac csc143/FibonacciTest.java
+Run the program:
 
 bash
 Copy
 Edit
 java csc143.FibonacciTest
-🧪 Example Output
-markdown
+The program will:
+
+Print a welcome message
+
+Run recursive, memoized, and iterative tests for n = 11
+
+Run vertical (large n) comparisons for n = 45
+
+✅ Sample Output Snippet
+mathematica
 Copy
 Edit
-***************************************************
-
- 			 	 W E L C O M E  
-
- F I B O N A C C I    T E S T    P R O G R A M
-
-***************************************************
-
-
-			 	 R E C U R S I V E   -   fib(n)
+           R E C U R S I V E   -   fib(n)
 
 ============== nth Fibonacci ============
-0 	1 	2 	3 	4 	5 	6 	7 	8 	9 	10 	11 	
-0 	1 	1 	2 	3 	5 	8 	13 	21 	34 	55 	89 	
+0     1     2     3     4     5     ...
+0     1     1     2     3     5     ...
+📚 Educational Purpose
+This project is designed for learning and benchmarking recursive vs optimized Fibonacci strategies. Ideal for:
 
-...
+Computer Science students (CS1/CS2 level)
 
-			 	 L A R G E  N   -   mfib(n)
+Practicing interface and functional programming
 
-============ R E S U L T S  ============
-
-
-====== Large Value Printing Ahead ======
-
-		 n 		 value
-		 0 		 0 
-		 1 		 1 
-		 2 		 1 
-		 3 		 2 
-		 4 		 3 
-		 5 		 5 
-		 6 		 8 
-		 ...
-📈 Comparison Summary
-Method	Time Complexity	Space Complexity	Suitable for Large n
-Recursive	O(2ⁿ)	O(n) stack depth	❌ No (inefficient)
-Iterative	O(n)	O(1)	✅ Yes
-Memoized	O(n)	O(n)	✅ Yes
-
-📚 Topics Demonstrated
-Recursion and iteration in algorithm design
-
-Memoization for performance optimization
-
-Functional interfaces and Java method references
-
-Output formatting (tabular + vertical alignment)
+Understanding performance bottlenecks in naive recursion
