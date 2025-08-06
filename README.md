@@ -10,11 +10,8 @@ This Java project showcases and compares three different approaches to computing
 
 csc143/
 ├── Fib.java // Interface defining the fib(n) method signature
-└── FibonacciTest.java // Implements three Fibonacci algorithms and runs comparisons
 
-markdown
-Copy
-Edit
+└── FibonacciTest.java // Implements three Fibonacci algorithms and runs comparisons
 
 ## 📌 Description
 
@@ -62,10 +59,7 @@ Prints each `n` and its Fibonacci value line-by-line for easier analysis.
 javac csc143/FibonacciTest.java
 Run the program:
 
-bash
-Copy
-Edit
-java csc143.FibonacciTest
+FibonacciTest.java
 The program will:
 
 Print a welcome message
@@ -83,11 +77,8 @@ Edit
 ============== nth Fibonacci ============
 0     1     2     3     4     5     ...
 0     1     1     2     3     5     ...
-📚 Educational Purpose
-This project is designed for learning and benchmarking recursive vs optimized Fibonacci strategies. Ideal for:
 
-Computer Science students (CS1/CS2 level)
+```
 
-Practicing interface and functional programming
+---
 
-Understanding performance bottlenecks in naive recursion
