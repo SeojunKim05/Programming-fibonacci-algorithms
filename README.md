@@ -9,6 +9,7 @@ This Java project showcases and compares three different approaches to computing
 ## 📁 Project Structure
 
 csc143/
+
 ├── Fib.java // Interface defining the fib(n) method signature
 
 └── FibonacciTest.java // Implements three Fibonacci algorithms and runs comparisons
